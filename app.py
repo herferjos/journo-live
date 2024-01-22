@@ -6,7 +6,6 @@ from modules import *
 from io import BytesIO
 import re
 import html2text
-from streamlit_gsheets import GSheetsConnection
 
 st.set_page_config(page_title="Journo.AI", page_icon="🗞️", layout="wide")
 
@@ -21,13 +20,6 @@ st.markdown(
 )
 st.write("---")
 
-# # @st.cache_resource(persis="disk")
-# conn = st.experimental_connection("gsheets", type=GSheetsConnection)
-
-# st.session_state.url = "https://docs.google.com/spreadsheets/d/11lvyXKreH17szyJRQcDU9MZWJe0XywpaFhEuBZbxtsw/edit?usp=sharing"
-
-# if 'data' not in st.session_state:
-#   st.session_state.data = conn.read(spreadsheet = st.session_state.url , worksheet = "11lvyXKreH17szyJRQcDU9MZWJe0XywpaFhEuBZbxtsw")
 
 # Inicio de sesión
 if 'autenticado' not in st.session_state:
@@ -72,9 +64,6 @@ if 'autenticado' in st.session_state:
                 st.warning("Este proceso puede tardar unos minutos. ¡Recuerda revisarla antes de publicar!")
                 st.session_state.transcription = transcribe_audio(st.session_state.temp_path)
                 st.session_state.noticia_generada = generar_noticia(st.session_state.transcription, st.session_state.X, st.session_state.Y, st.session_state.Z, st.session_state.A, st.session_state.B)
-                # nueva_fila = {'Transcripcion': st.session_state.transcription, 'X': st.session_state.X, 'Y': st.session_state.Y, 'Z': st.session_state.Z, 'A': st.session_state.A, 'B': st.session_state.B, 'Noticia': st.session_state.noticia_generada}
-                # st.session_state.data = st.session_state.data.append(nueva_fila, ignore_index=True)
-                # conn.update(spreadsheet = st.session_state.url, data=st.session_state.data)
                 st.rerun()
               
 
