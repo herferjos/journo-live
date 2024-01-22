@@ -1,7 +1,0 @@
-python-dotenv==0.15.0
-openai
-pydub==0.25.1
-ffmpeg-python
-imageio
-html2text
-st-gsheets-connection
