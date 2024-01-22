@@ -69,6 +69,8 @@ if 'autenticado' in st.session_state:
     if 'noticia_generada' in st.session_state:
         st.write("## ✔️¡Listo! Aquí tienes tu noticia:")
 
+        noticia = st.session_state.noticia_generada.encode('latin-1').decode('utf-8')
+
         estilo_bordes_redondeados = """
             <style>
                 .bordes-redondeados {
@@ -83,4 +85,4 @@ if 'autenticado' in st.session_state:
         st.markdown(estilo_bordes_redondeados, unsafe_allow_html=True)
 
         # Mostrar el texto con bordes redondeados
-        st.markdown(f'<div class="bordes-redondeados">{st.session_state.noticia_generada.encode('latin-1').decode('utf-8')}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="bordes-redondeados">{noticia}</div>', unsafe_allow_html=True)
