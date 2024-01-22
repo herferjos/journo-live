@@ -5,7 +5,6 @@ import os
 from modules import *
 from io import BytesIO
 import re
-import html2text
 
 st.set_page_config(page_title="Journo.AI", page_icon="🗞️", layout="wide")
 
