@@ -61,7 +61,6 @@ def generar_noticia(transcripcion, X, Y, Z, A, B):
         model="gpt-4-1106-preview",
         messages=messages,
         max_tokens=3500,
-        min_tokens=2000,
         temperature=0
     )
 
