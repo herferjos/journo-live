@@ -30,7 +30,7 @@ usuarios_permitidos = {
     "analopez" : "Analopez.journoAI",
     "valeriaveiga" : "Valeriaveiga.journoAI",
     "alvarorafaelvl" : "Alvarorafaelvl.journoAI",
-    "aranchetejero" : "Aranchatejero.journoAI"
+    "aranchatejero" : "Aranchatejero.journoAI"
     # Puedes añadir más usuarios aquí
 }
 
